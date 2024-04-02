@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+body {
+  background-color: white;
+}
+main {
+  margin: 0 5rem;
+  margin-top: 150px;
+}
+
+h1 {
+  text-align: center;
+  box-shadow: 0px 6px 4px -4px rgb(217, 215, 215);
+  margin: 3rem 0;
+  padding-bottom: 1rem;
+  font-size: 4rem;
+}
+
+/* #h1-img {
+  width: 100%;
+} */
+
+section {
+  margin: 5rem 0;
+}
+
+#about-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#about {
+  display: flex;
+  justify-content: space-around;
+}
+
+#about_img {
+  width: 350px;
+  height: 450px;
+}
+
+h3 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+#about_explanation {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 40%;
+  flex-direction: column;
+}
+
+#edu-container {
+  display: flex;
+  align-items: center;
+}
+
+#edu-container p {
+  margin-left: 1rem;
+}
+
+#cau-logo {
+  width: 110px;
+  height: 100px;
+}
+
+.title {
+  border-left: 0.2rem solid rgb(217, 215, 215);
+  padding-left: 0.5rem;
+  font-size: 3rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  margin-bottom: 3.5rem;
+  color: rgb(92, 162, 224);
+}
+
+.subtitle {
+  color: black;
+  font-size: 2rem;
+  margin: 1.5rem 0;
+  border: none;
+}
+
+#capability-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#div-container {
+  display: flex;
+}
+
+#skill,
+#tool {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#skill li,
+#tool li {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+#skill li img,
+#tool li img {
+  margin-right: 1rem;
+}
+
+#capability-img {
+  width: 50px;
+  height: 50px;
+}
+
+#tmi-container li {
+  margin: 0.5rem 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 750px) {
+  main {
+    margin-top: 200px;
+  }
+  #about {
+    flex-direction: column;
+    align-items: center;
+  }
+  #about_explanation {
+    margin-top: 1rem;
+  }
+  #div-container {
+    flex-direction: column;
+  }
+}
