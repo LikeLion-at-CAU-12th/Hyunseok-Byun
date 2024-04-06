@@ -127,11 +127,13 @@ function resetGame() {
 function darkMode(event) {
   const body = document.querySelector("body");
   const contentsWrapper = document.getElementById("contents-wrapper");
-  const displayTitle = document.getElementById("display-title");
+  const displayTitle = document.querySelectorAll(".title");
+  // console.log(displayTitle);
 
-  console.log(event);
+  // console.log(event);
   contentsWrapper.classList.toggle("darkMode");
-  displayTitle.classList.toggle("darkMode");
+  displayTitle[0].classList.toggle("darkMode");
+  displayTitle[1].classList.toggle("darkMode");
   body.classList.toggle("darkMode");
   resetBtn.classList.toggle("darkMode");
 
