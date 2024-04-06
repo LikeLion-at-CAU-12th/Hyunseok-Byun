@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Delicious Handrawn";
+  font-size: 30px;
+}
+
+button {
+  all: unset;
+}
+
+/* display:flex 속성 재사용 */
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* header-wrapper 영역 */
+#header-wrapper {
+  width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#reset-button {
+  font-size: 15px;
+  border-radius: 50%;
+  font-size: 15px;
+}
+
+.change-reverse {
+  border: black solid 2px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 3px;
+}
+
+#title {
+  font-size: 70px;
+  font-family: "Nanum Pen Script", cursive;
+}
+
+/* contents-wrapper 영역 */
+#contents-wrapper {
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contents {
+  border: black solid 4px;
+}
+
+/* section1(점수판) */
+.score-section {
+  height: 15%;
+  justify-content: space-evenly;
+}
+
+/* section2(경기장) */
+.display-section {
+  height: 60%;
+  font-size: 45px;
+}
+
+.display-main {
+  flex-basis: 40%;
+  align-items: center;
+  gap: 30px;
+}
+
+#display-title {
+  width: 100px;
+  /* text-align: center; */
+  /* 어차피 밑에 title 클래스 css에 존재함 */
+}
+
+#display-result {
+  flex-basis: 20%;
+  text-align: center;
+}
+
+/* section3(버튼) */
+.button-section {
+  height: 25%;
+
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#rockBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 70px;
+  height: 70px;
+
+  font-size: 60px;
+}
+
+#scissorsBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 70px;
+  height: 70px;
+
+  font-size: 60px;
+}
+#paperBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 70px;
+  height: 70px;
+
+  font-size: 60px;
+}
+
+.fa-regular {
+  border-radius: 50%;
+  border: black 4px solid;
+}
+
+#my-hand-icon,
+#computer-hand-icon {
+  border: black;
+}
+
+#my-hand-text,
+#computer-hand-text {
+  width: 100%;
+  height: 80px;
+  text-align: center;
+}
+
+.icon-container {
+  font-size: 80px;
+
+  text-align: center;
+  width: 100%;
+  height: 80px;
+}
+
+.title {
+  text-align: center;
+  border-bottom: black solid 3px;
+}
+
+#darkMode-container {
+  margin-top: 2rem;
+}
+
+.darkModeBtn {
+  padding: 1rem 1.5rem;
+  border: 4px solid black;
+  border-radius: 15px;
+}
+
+.darkMode {
+  background-color: #131517;
+  color: #dfe2ea;
+  border-color: #dfe2ea;
+}
