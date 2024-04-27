@@ -7,7 +7,7 @@ class Todo {
     this.row = new Div("", "row").node; // row는 div태그를 가르킨다 .node가 div요소를 반환함
     this.textBox = new Div(todo, "text-box");
     this.completeBtn = new Image("", "img");
-    console.log(this.completeBtn);
+    // console.log(this.completeBtn);
     this.completeBtn.node.src = "../week6/images/확인버튼.png";
     this.delBtn = new Image("", "img");
     this.delBtn.node.src = "../week6/images/삭제버튼.png";

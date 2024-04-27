@@ -31,17 +31,6 @@ class CompleteController {
   }
 
   returnCompleteTodo() {
-    // this.innerNode.classList.toggle("done-text");
-    // this.comBtnNode.classList.toggle("done-btn");
-    // if (this.comBtnNode.innerText === "미완") {
-    //   this.comBtnNode.innerText = "완료";
-    //   //   this.innerNode.classList.remove("done-text");
-    //   //   this.comBtnNode.classList.remove("done-btn");
-    // } else {
-    //   this.comBtnNode.innerText = "미완";
-    //   //   this.innerNode.classList.add("done-text");
-    //   //   this.comBtnNode.classList.add("done-btn");
-    // }
     const todoController = new TodoController(this.text);
     todoController.addTodo();
     this.delCompleteTodo();
