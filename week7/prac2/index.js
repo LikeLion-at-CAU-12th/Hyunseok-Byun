@@ -13,12 +13,14 @@ const option = {
   pageNo: 1,
 };
 
+let moredata;
+
 let count = -1;
 
 async function getData() {
-  const random = Math.floor(Math.random() * 100 + 1);
+  // const random = Math.floor(Math.random() * 100 + 1);
 
-  const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&pageNo=${random}&serviceKey=${option.serviceKey}`;
+  const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&pageNo=${option.pageNo}&serviceKey=${option.serviceKey}`;
 
   count++;
 
@@ -45,8 +47,12 @@ async function getData() {
     장소 : ${data.galPhotographyLocation}`;
 
     const button = document.createElement("button");
-    button.innerHTML = '<a href="more.html">더보기</a>';
+    button.innerText = "더보기";
     button.id = "moreBtn";
+
+    button.addEventListener("click", () => {
+      window.location.href = `more.html?${data.galCreatedtime}?${data.galPhotographer}?${data.galSearchKeyword}?${data.galWebImageUrl}`;
+    });
 
     list.appendChild(image);
     list.appendChild(info);
@@ -55,3 +61,10 @@ async function getData() {
     container.appendChild(list);
   });
 }
+
+// const moreBtn = document.querySelector("a");
+
+// moreBtn.addEventListener("click", () => {
+//   console.log(moreBtn);
+//   location.href = `more.html?${data}`;
+// });

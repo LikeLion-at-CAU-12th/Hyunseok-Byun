@@ -1,48 +1,39 @@
 const moreContainer = document.getElementById("container");
 
+getMoreData();
+
 async function getMoreData() {
-  const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&pageNo=${option.pageNo}&serviceKey=${option.serviceKey}`;
+  const receiveData = location.href.split("?");
 
-  count++;
+  const data1 = receiveData[1];
+  const data2 = decodeURI(receiveData[2]);
+  const data3 = decodeURI(receiveData[3]);
+  const data4 = decodeURI(receiveData[4]);
 
-  const fetchData = await fetch(url);
-  console.log(fetchData);
+  console.log(receiveData);
+  console.log(data1);
+  console.log(data2);
+  console.log(data3);
+  console.log(data4);
 
-  const toJson = await fetchData.json();
-  console.log(toJson);
+  const list = document.createElement("div");
+  list.id = "list"; // id를 추가하여 css가 적용되게 한다.
 
-  const datas = await toJson.response.body.items.item;
-  console.log(datas);
+  let date = data1;
+  date = `${date[2]}${date[3]}/${date[4]}${date[5]}/${date[6]}${date[7]}`;
 
-  datas.map((data, i) => {
-    const list = document.createElement("div");
-    list.id = "list"; // id를 추가하여 css가 적용되게 한다.
+  const image = document.createElement("img");
+  image.src = data4;
 
-    // console.log(data.galCreatedtime);
-    // console.log(typeof data.galCreatedtime); // 반환타입 = string(문자열)
-    // console.log(data.galCreatedtime[0]);
-
-    let date = data.galCreatedtime;
-    date = `${date[2]}${date[3]}/${date[4]}${date[5]}/${date[6]}${date[7]}`;
-
-    const image = document.createElement("img");
-    image.src = data.galWebImageUrl;
-
-    const info = document.createElement("span");
-    info.innerText = `
-    📌${i + 1 + 5 * count}번째 사진
-    제목 : ${data.galTitle}
-    장소 : ${data.galPhotographyLocation}
+  const info = document.createElement("span");
+  info.innerText = `
     날짜 : ${date}
-    촬영자 : ${data.galPhotographer}
-    키워드 : ${data.galSearchKeyword}
+    촬영자 : ${data2}
+    키워드 : ${data3}
     `;
 
-    list.appendChild(image);
-    list.appendChild(info);
+  list.appendChild(image);
+  list.appendChild(info);
 
-    moreContainer.appendChild(list);
-  });
+  moreContainer.appendChild(list);
 }
-
-getMoreData();
