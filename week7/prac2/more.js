@@ -4,32 +4,36 @@ getMoreData();
 
 async function getMoreData() {
   const receiveData = location.href.split("?");
+  console.log(location.href); // string 타입
+  const moreUrl = new URL(location.href);
+  console.log(moreUrl);
+  const urlParams = moreUrl.searchParams;
 
-  const data1 = receiveData[1];
-  const data2 = decodeURI(receiveData[2]);
-  const data3 = decodeURI(receiveData[3]);
-  const data4 = decodeURI(receiveData[4]);
+  const createdTime = urlParams.get("createdTime");
+  console.log(createdTime);
 
-  console.log(receiveData);
-  console.log(data1);
-  console.log(data2);
-  console.log(data3);
-  console.log(data4);
+  const photographer = urlParams.get("photographer");
+  console.log(photographer);
+
+  const searchKeyword = urlParams.get("searchKeyword");
+  console.log(searchKeyword);
+
+  const webImageUrl = urlParams.get("webImageUrl");
+  console.log(webImageUrl);
 
   const list = document.createElement("div");
   list.id = "list"; // id를 추가하여 css가 적용되게 한다.
 
-  let date = data1;
-  date = `${date[2]}${date[3]}/${date[4]}${date[5]}/${date[6]}${date[7]}`;
+  date = `${createdTime[2]}${createdTime[3]}/${createdTime[4]}${createdTime[5]}/${createdTime[6]}${createdTime[7]}`;
 
   const image = document.createElement("img");
-  image.src = data4;
+  image.src = webImageUrl;
 
   const info = document.createElement("span");
   info.innerText = `
     날짜 : ${date}
-    촬영자 : ${data2}
-    키워드 : ${data3}
+    촬영자 : ${photographer}
+    키워드 : ${searchKeyword}
     `;
 
   list.appendChild(image);

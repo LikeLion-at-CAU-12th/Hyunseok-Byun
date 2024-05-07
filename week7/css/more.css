@@ -1,0 +1,24 @@
+body {
+  background-color: #e2e2e2;
+}
+
+#container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+img {
+  object-fit: cover;
+  height: 400px;
+  width: 90%;
+}

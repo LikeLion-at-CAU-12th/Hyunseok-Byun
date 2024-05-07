@@ -51,7 +51,7 @@ async function getData() {
     button.id = "moreBtn";
 
     button.addEventListener("click", () => {
-      window.location.href = `more.html?${data.galCreatedtime}?${data.galPhotographer}?${data.galSearchKeyword}?${data.galWebImageUrl}`;
+      window.location.href = `more.html?createdTime=${data.galCreatedtime}&photographer=${data.galPhotographer}&searchKeyword=${data.galSearchKeyword}&webImageUrl=${data.galWebImageUrl}`;
     });
 
     list.appendChild(image);
