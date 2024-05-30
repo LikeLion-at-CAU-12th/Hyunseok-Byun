@@ -6,10 +6,11 @@ import { getGenderUser, getPartUser, getPerPage } from "../../apis/userlist";
 const UserFilter = ({ filter, setFilter, setUserData, setCurPage }) => {
   const handleClick = async (type, param) => {
     if (type === "all") {
-      const response = await getPerPage(1);
+      const response = await getPerPage(0);
       // response값을 저장하기위해 새로운 상태(state)가 필요하다
       // usestate를 이용해서 이 값을 저장한다.
-      setUserData(response);
+      const firstResponse = response.slice(0, 5);
+      setUserData(firstResponse);
       setCurPage(1);
     } else if (type === "gender") {
       const response = await getGenderUser(param);

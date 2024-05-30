@@ -4,8 +4,9 @@ import { getPerPage } from "../../apis/userlist";
 
 const PageSelection = ({ curPage, setUserData, setCurPage }) => {
   const handleClick = async (page) => {
-    const response = await getPerPage(page);
-    setUserData(response);
+    const response = await getPerPage(0);
+    const newresponseData = response.slice((page - 1) * 5, (page - 1) * 5 + 5);
+    setUserData(newresponseData);
     setCurPage(page);
   };
   return (
