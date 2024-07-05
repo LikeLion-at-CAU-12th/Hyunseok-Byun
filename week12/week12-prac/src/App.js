@@ -5,6 +5,8 @@ import BookList from "./pages/BookList";
 import BookDetail from "./pages/BookDetail";
 import Test from "./pages/Test";
 import TestResult from "./pages/TestResult";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           path="/liontest/result/:num"
           element={<TestResult></TestResult>}
         ></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<Signup></Signup>}></Route>
       </Routes>
     </AppDom>
   );

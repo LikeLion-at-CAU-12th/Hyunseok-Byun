@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link, Outlet, useNavigate } from "react-router-dom";
+import { loginAtom } from "../recoil/atom";
+import { useRecoilValue } from "recoil";
 
 const Test = () => {
   const [questions, setQuestions] = useState([]);
@@ -14,8 +16,15 @@ const Test = () => {
   const goToHome = () => {
     navigate("/");
   };
+  const isLoggedIn = useRecoilValue(loginAtom);
 
   useEffect(() => {
+    // 여기서 전역 상태인 isLoggedIn을 통해 로그인상태가 아니라면 로그인 화면으로 보낸다
+    if (!isLoggedIn) {
+      alert("로그인이 필요합니다");
+      navigate("/login");
+    }
+
     const fetchQuestions = async () => {
       const response = await axios.get(
         "https://gominzipsession.o-r.kr/liontest/question"
